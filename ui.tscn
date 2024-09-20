@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbkepkox0vyst"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_c5vbf"]
+[ext_resource type="Theme" uid="uid://bty6f1tqn1v2k" path="res://my_theme.tres" id="1_jdk0w"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jdk0w")
+script = ExtResource("1_c5vbf")
+
+[node name="InfoPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="InfoPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InfoPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="PanelGrid" type="GridContainer" parent="InfoPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="StatusLabel" type="Label" parent="InfoPanel/MarginContainer/VBoxContainer/PanelGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+text = "Player Status"
+
+[node name="status" type="Label" parent="InfoPanel/MarginContainer/VBoxContainer/PanelGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Healthy"
+
+[node name="ScoreLabel" type="Label" parent="InfoPanel/MarginContainer/VBoxContainer/PanelGrid"]
+layout_mode = 2
+text = "Player Score"
+
+[node name="score" type="Label" parent="InfoPanel/MarginContainer/VBoxContainer/PanelGrid"]
+layout_mode = 2
+text = "0"
+
+[node name="retryBtn" type="Button" parent="InfoPanel/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Try Again"
